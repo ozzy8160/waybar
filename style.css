@@ -67,7 +67,7 @@ window#waybar {
 }
 
 #custom-power {
-    background-color: @color11;
+    background-color: @color5;
     border-radius: 100px;
     margin: 5px 5px;
     padding: 1px 9px 1px 6px;
