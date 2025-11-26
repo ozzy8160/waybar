@@ -5,9 +5,15 @@
     // "width": 1280, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
+<<<<<<< HEAD
     "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/scratchpad", "custom/media", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["mpd", "cpu", "temperature", "memory", "disk",  "backlight", "sway/language", "battery", "tray","pulseaudio", "idle_inhibitor", "custom/power"],
+=======
+    "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/scratchpad", "custom/media"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "clock", "tray", "custom/power"],
+>>>>>>> master
     // Modules configuration
      "hyprland/workspaces": {
          "disable-scroll": true,
@@ -93,6 +99,7 @@
     },
     "memory": {
         "interval": 1,
+<<<<<<< HEAD
 	"format": " {percentage}%",
         "tooltip": true,
         "tooltip-format": " {used:0.01f}/{total:0.1f}G",
@@ -105,6 +112,11 @@
         "path": "/", // Default path is "/", can be changed
         "interval": 1
     },
+=======
+	"format": "{used:0.1f}G ",
+        "tooltip": true
+    },
+>>>>>>> master
 
 //command to find hwmon-path & zone
 //for i in /sys/class/hwmon/hwmon*/temp*input; do echo "$(<$(dirname $i)/name): $(cat ${i%}label 2>/dev/null || echo $(basename ${i%})) $(readlink -f $i)"; done 
@@ -112,10 +124,14 @@
     "temperature": { 
         "interval": 1,
         "thermal-zone": 4,
+<<<<<<< HEAD
 	      //old dell laptop
         //"hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp3_input",
 	      //nixos main laptop
 	      "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+=======
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+>>>>>>> master
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C",
         "format": "{temperatureC}°C",
@@ -142,6 +158,18 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
+<<<<<<< HEAD
+=======
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{bandwidthUpBytes}  {bandwidthDownBytes} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+>>>>>>> master
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon}",
